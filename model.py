@@ -147,9 +147,9 @@ class NNUE(pl.LightningModule):
     self.param_index = param_index
 
     self.nnue2score = 600.0
-    self.weight_scale_hidden = 64.0
+    self.weight_scale_hidden = 32.0
     self.weight_scale_out = 16.0
-    self.quantized_one = 127.0
+    self.quantized_one = 255.0
 
     max_hidden_weight = self.quantized_one / self.weight_scale_hidden
     max_out_weight = (self.quantized_one * self.quantized_one) / (self.nnue2score * self.weight_scale_out)
